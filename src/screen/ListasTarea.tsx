@@ -50,8 +50,8 @@ const ListasTarea = ({navigation}) => {
 
     
     return (    
-    <View>
-      <Text>HOLA BEBE</Text>
+    <View style={styles.containerBase}>
+      
 {/*creando un arreglo*/}
       {
           usuario.map(lista =>(
@@ -82,17 +82,27 @@ const styles = StyleSheet.create({
         width:'95%',
         flexDirection:'row',
         justifyContent:'space-between',
-        backgroundColor:'#34d2eb',
+        backgroundColor:'#0cedb9',
         marginBottom:15,
         paddingVertical:10,
         paddingHorizontal:8,
-        borderRadius:5,
-        marginLeft:10
+        borderRadius:9,
+        marginLeft:10,
+        marginTop:10,
+        borderWidth:3,
+        borderColor:'#e61d02'
+
 
     },
     text:{
         fontSize:24
     },
+    containerBase:{
+        flex:1,
+        backgroundColor:'#0cedb9',
+        
+        
+    }
 
 
 })

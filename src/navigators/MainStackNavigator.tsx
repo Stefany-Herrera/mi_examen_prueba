@@ -13,10 +13,22 @@ const MainStackNavigator = () => {
     return (
         <NavigationContainer>
         <Stack.Navigator initialRouteName="tarea">
-  
+  {/* en la paret  */}
           <Stack.Screen name="Login" component={Login}/>
-           <Stack.Screen name="tarea" component={ListasTarea}/> 
+
+           <Stack.Screen name="tarea" component={ListasTarea}
+           options={{headerStyle:
+            {
+              backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+            fontWeight: 'bold',
+            },
+          }}/> 
+          
            <Stack.Screen name="calculo" component={Liquidacion}/> 
+           
   
         </ Stack.Navigator>
       </NavigationContainer>
@@ -24,5 +36,6 @@ const MainStackNavigator = () => {
 }
 
 export default MainStackNavigator
+
 
 
