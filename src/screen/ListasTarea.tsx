@@ -2,34 +2,99 @@ import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navig
 import React from 'react'
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
+import { useState } from 'react';
 
 const ListasTarea = ({navigation}) => {
-    return (
-        <View>
-            <TextInput
-            style={styles.inputs}
-            placeholder={'Ingrese su tarea'}
-            />
-            <Button title="atras" onPress={() => navigation.goBack( )} />
+    const [usuario, setUsuario] = useState([
 
-            
+        
+            {
+                "id": 1,
+                "name": "Leanne Graham"
+            },
+            {
+                "id": 2,
+                "name": "Ervin Howell",
+            },
+            {
+                "id": 2,
+                "name": "Ervin Howell",
+            },
+            {
+                "id": 2,
+                "name": "Ervin Howell",
+            },
+            {
+                "id": 2,
+                "name": "Ervin Howell",
+            },
+            {
+                "id": 2,
+                "name": "Ervin Howell",
+            },
+            {
+                "id": 2,
+                "name": "Ervin Howell",
+            },
+            {
+                "id": 2,
+                "name": "Ervin Howell",
+            },
+        ])
+        const eliminarTareas = () =>{
+            alert('si')
+        }
+        const editarTareas =()=>{
+            alert("editar")
+        }
+
+    
+    return (    
+    <View>
+      <Text>HOLA BEBE</Text>
+{/*creando un arreglo*/}
+      {
+          usuario.map(lista =>(
+           <View style={styles.container}>
+            <Text style={styles.text} key={lista.id}>{lista.name}</Text>
+            <Button
+            title="eliminar"
+            onPress={eliminarTareas}
+          />
+          {/* <Button
+            title="editar"
+            onPress={editarTareas}
+          /> */}
+          </View>
+
+          ))
+      }
+       
+        
         </View>
     )
 }
 export default ListasTarea
 
 const styles = StyleSheet.create({
-    inputs: {
-        backgroundColor: '#F2F8FB',
-        borderRadius: 8,
-        padding: 10,
-        textAlign: 'right',
-        fontSize: 22,
-        fontWeight: 'bold',
-        color: '#004445',
-        marginTop:30
-        
-    }
+   
+    container:{
+        width:'95%',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        backgroundColor:'#34d2eb',
+        marginBottom:15,
+        paddingVertical:10,
+        paddingHorizontal:8,
+        borderRadius:5,
+        marginLeft:10
+
+    },
+    text:{
+        fontSize:24
+    },
+
+
 })
    
 
