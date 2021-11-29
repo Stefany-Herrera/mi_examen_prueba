@@ -5,6 +5,7 @@ import Liquidacion from '../screen/Liquidacion';
 import ListasTarea from '../screen/ListasTarea';
 import Login from '../screen/Login';
 import NicaAtributo from '../screen/NicaAtributo';
+import Api from '../screen/Api';
 
 
 // menu de navegacion
@@ -16,6 +17,7 @@ const MainStackNavigator = () => {
         <Stack.Navigator initialRouteName="tarea">
   {/* en la paret  */}
           <Stack.Screen name="Login" component={Login}/>
+          <Stack.Screen name="Api" component={Api}/>
 
            <Stack.Screen name="tarea" component={ListasTarea}
            options={{headerStyle:
@@ -27,6 +29,7 @@ const MainStackNavigator = () => {
             fontWeight: 'bold',
             },
           }}/> 
+          
            
            <Stack.Screen name="calculo" component={Liquidacion}
             options={{headerStyle:

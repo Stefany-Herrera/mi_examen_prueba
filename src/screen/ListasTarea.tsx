@@ -3,11 +3,12 @@ import {
   NativeStackScreenProps,
 } from "@react-navigation/native-stack";
 import React, { useEffect } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { useState } from "react";
 
 const ListasTarea = ({ navigation }) => {
+  
 
     const [tarea, setTarea] = useState<string>('')
     const [listTareas, setListTareas] = useState<string[]>([])
@@ -16,42 +17,53 @@ const ListasTarea = ({ navigation }) => {
     const crearTarea = () => {
        setListTareas([... listTareas,tarea])
     }
-  
-    const getUser =() => {
-        alert(listTareas)
-    }
     
     const eliminarTarea = (id:number) => {
         listTareas.splice(id,1)
+        getTareas()
     }
+    const getTareas = () =>{
+      setListTareas([...listTareas])
+    }
+    const getUser =() => {
+      alert(listTareas)
+  }
+  useEffect ( getTareas ,  [ ] )
    
 
   return (
+    
     <View style={styles.containerBase}>
-      <View style={styles.container}>
+      <ScrollView>
+      
+       <View style={styles.container}>
+        
         <TextInput
           style={styles.inputs}
           placeholder={"ingrese el Usuario "}
           onChangeText={setTarea}
         />
         <Button color="#fcba03" title="Agregar" onPress={crearTarea} />
-      </View>
-      {/* creando un arreglo */}
-      {listTareas.map((lista) => (
-        <View style={styles.container}>
+       </View>
+        {/* creando un arreglo */}
+       {listTareas.map((lista,index) => (
+        <View style={styles.container} key={index}>
           <Text style={styles.text}>{lista}</Text>
 
           <Button
             color="#fcba03"
             title="eliminar"
-            onPress={() => eliminarTarea(tarea.id)}
+            onPress={() => eliminarTarea(index)}
           />
           {/* <Button title="editar" onPress={editarTareas} /> */}
         </View>
       ))}
       <Button title="Ver datos" onPress={getUser} />
+      </ScrollView>
     </View>
+    
   );
+  
 };
 export default ListasTarea;
 
