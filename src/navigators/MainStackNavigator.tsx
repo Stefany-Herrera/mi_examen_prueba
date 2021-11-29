@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Liquidacion from '../screen/Liquidacion';
 import ListasTarea from '../screen/ListasTarea';
 import Login from '../screen/Login';
+import NicaAtributo from '../screen/NicaAtributo';
 
 
 // menu de navegacion
@@ -26,8 +27,27 @@ const MainStackNavigator = () => {
             fontWeight: 'bold',
             },
           }}/> 
-          
-           <Stack.Screen name="calculo" component={Liquidacion}/> 
+           
+           <Stack.Screen name="calculo" component={Liquidacion}
+            options={{headerStyle:
+                {
+                  backgroundColor: '#f4511e',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                fontWeight: 'bold',
+                },
+              }}/>
+           <Stack.Screen name="Atributo" component={NicaAtributo} 
+            options={{headerStyle:
+                {
+                  backgroundColor: '#c1eb09',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                fontWeight: 'bold',
+                },
+              }}/>
            
   
         </ Stack.Navigator>

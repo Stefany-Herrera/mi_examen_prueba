@@ -3,14 +3,20 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import { useState } from "react";
 
 const Liquidacion = () => {
+
   const [nombre, setNombre] = useState("");
   const [salario, setSalario] = useState("");
   const [result, setResul] = useState<number>(0);
+
   const calcularSalario = () => {
+
     const anio = 12;
+
     const total = anio * parseInt(salario);
+
     setResul(total);
   };
+  
   useEffect(calcularSalario, [salario]);
   return (
     <View>
