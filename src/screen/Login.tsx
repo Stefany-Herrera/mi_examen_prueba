@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { Image } from "react-native";
+const logo = {
+  uri: "https://www.kindpng.com/picc/m/192-1925162_login-icon-png-transparent-png.png",
+};
 
 const Login = ({ navigation }) => {
 
@@ -23,7 +27,11 @@ const Login = ({ navigation }) => {
   };
 
   return (
+    
     <View style={styles.container}>
+      <View style={styles.logoheader}>
+          <Image style={styles.logo} source={logo} />
+      </View>
 
       <Text style={styles.text}>Usuario</Text>
 
@@ -62,20 +70,30 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     color: "#004445",
-    marginTop: 30,
+    marginTop: 10,
+    borderWidth:3
   },
   text: {
-    fontSize: 44,
+    fontSize: 34,
     color: "#05786A",
   },
   button: {
     color: "#C4C4C4",
-    marginTop: 50,
+    marginTop: 40,
   },
   container: {
-    marginTop: "50%",
-    backgroundColor: "#fff",
+    marginTop:'20%',
+    // backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  logo:{ 
+    width: 150,
+    height: 150, 
+  },
+    logoheader:{
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    marginVertical:50
   },
 });

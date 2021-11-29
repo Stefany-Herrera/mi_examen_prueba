@@ -6,6 +6,8 @@ import ListasTarea from '../screen/ListasTarea';
 import Login from '../screen/Login';
 import NicaAtributo from '../screen/NicaAtributo';
 import Api from '../screen/Api';
+import Menu from '../screen/Menu';
+
 
 
 // menu de navegacion
@@ -14,10 +16,11 @@ const Stack = createNativeStackNavigator();
 const MainStackNavigator = () => {
     return (
         <NavigationContainer>
-        <Stack.Navigator initialRouteName="tarea">
+        <Stack.Navigator initialRouteName="Menu">
   {/* en la paret  */}
           <Stack.Screen name="Login" component={Login}/>
           <Stack.Screen name="Api" component={Api}/>
+          <Stack.Screen name="Menu" component={Menu}/>
 
            <Stack.Screen name="tarea" component={ListasTarea}
            options={{headerStyle:

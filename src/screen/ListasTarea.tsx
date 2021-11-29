@@ -34,7 +34,7 @@ const ListasTarea = ({ navigation }) => {
   return (
     
     <View style={styles.containerBase}>
-      <ScrollView>
+     
       
        <View style={styles.container}>
         
@@ -45,21 +45,27 @@ const ListasTarea = ({ navigation }) => {
         />
         <Button color="#fcba03" title="Agregar" onPress={crearTarea} />
        </View>
+       <ScrollView>
+       
         {/* creando un arreglo */}
        {listTareas.map((lista,index) => (
         <View style={styles.container} key={index}>
+          
           <Text style={styles.text}>{lista}</Text>
-
+          
           <Button
             color="#fcba03"
             title="eliminar"
             onPress={() => eliminarTarea(index)}
           />
           {/* <Button title="editar" onPress={editarTareas} /> */}
+          
         </View>
       ))}
-      <Button title="Ver datos" onPress={getUser} />
       </ScrollView>
+      
+      <Button title="Ver datos" onPress={getUser} />
+      
     </View>
     
   );
